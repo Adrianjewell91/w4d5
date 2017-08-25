@@ -2,6 +2,7 @@
 
 <p>This is the page for <%= @band.name %>. They're the best! </p>
 
-<form action="index.html" method="post">
-  
+<form action=" <%= bands_url %>  " method="get">
+  <input type="submit" value="back to bands">
+  <%= auth_token %>
 </form>
