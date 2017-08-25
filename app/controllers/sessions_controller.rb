@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
     if @user
       #what happens here? Log in, then redirect to show.
       login!(@user)
+      # fail
       redirect_to user_url(@user)
     else
       flash[:errors] = ["Wrong Credentials"]

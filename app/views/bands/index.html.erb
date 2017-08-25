@@ -1,0 +1,20 @@
+<h1>All of the bands!!!!!</h1>
+
+<table>
+  <th>Band ID </th>
+  <th>Band Name</th>
+  <th>View</th>
+  <th>Edit</th>
+  <% @bands.each do |band| %>
+  <tr>
+    <td> <%= band.id %> </td>
+    <td> <%= band.name %> </td>
+    <td>
+          <form action=" <%= band_url(band) %> " method="get">
+            <input type="submit" value="View">
+            <%= auth_token %>
+          </form>
+    </td>
+  </tr>
+  <% end %>
+</table>

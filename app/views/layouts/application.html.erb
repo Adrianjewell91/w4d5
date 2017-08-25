@@ -8,15 +8,16 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <!-- <header>
-      <% if current_user %>
+    <h1>THE BOMBEST MUSIC WEBSITE EVER</h1>
+    <header class="group">
+      <% if logged_in? %>
         <form action="<%=session_url%>" method="post">
             <input type="hidden" name="_method" value="delete">
             <input type="hidden"
                      name="authenticity_token"
                      value=" <%= form_authenticity_token %> ">
             <p>You are logged in as <%= current_user.email %>.</p>
-            <input type="submit" value="log out">
+            <input id="in-button" type="submit" value="log out">
         </form>
 
       <% else %>
@@ -25,13 +26,14 @@
           <input type="hidden"
                    name="authenticity_token"
                    value=" <%= form_authenticity_token %> ">
-            <input type="submit" value="login">
+            <input id="out-button" type="submit" value="login">
         </form>
 
       <% end  %>
 
-    </header> -->
+    </header>
 
     <%= yield %>
+
   </body>
 </html>

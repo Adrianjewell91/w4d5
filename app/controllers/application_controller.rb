@@ -2,10 +2,14 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   helper_method :current_user
+  helper_method :logged_in?
+  helper_method :require_logged_in
 
-  #sets the current session token to the
+  def logged_in?
+    current_user != nil
+  end
+
   def current_user
-    # fail 
     return nil unless session[:session_token]
     @current_user ||= User.find_by(session_token: session[:session_token])
   end
@@ -19,13 +23,11 @@ class ApplicationController < ActionController::Base
     session[:session_token] = nil
   end
 
-  #Next things: write the log in and log out refactoring.
-
-  #write the current user method: sets session token.
-
-  #add the log out button to the show method for log out functionality.
-
+  #DO THIS LATER:
   #redirect to sign up unless logged in, add a buton on login to sign_up.
-
   #Inside the site, where can anyone go, and where can only logged in people go?
+
+  def require_logged_in
+    redirect_to new_session_url unless logged_in?
+  end
 end

@@ -13,3 +13,59 @@
  *= require_tree .
  *= require_self
  */
+
+ /*html, head, body, header,
+ nav, h1, a, ul, li, main,
+ section, p, footer, small {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   outline: 0;
+   font: inherit;
+   color: inherit;
+   text-align: inherit;
+   text-decoration: inherit;
+   vertical-align: inherit;
+   box-sizing: inherit;
+   background: transparent;
+ }
+
+ header, nav, main, section,
+ footer, small {
+   display: block;
+ }
+
+ ul {
+   list-style: none;
+ }*/
+
+ body {
+   text-align: center;
+ }
+
+h1 {
+  font-size: 40px;
+}
+header {
+  font: 15px;
+  color: blue;
+  text-align: right;
+  /*display: flex;
+  justify-content: center;*/
+}
+
+#in-button {
+  background-color: red;
+  color: white;
+}
+
+#out-button {
+  background-color: blue;
+  color: white;
+}
+
+/*.group:after {
+  content: "";
+  display: block;
+  clear: both;
+}*/
