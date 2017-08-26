@@ -37,8 +37,13 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 2.13'
+  gem 'capybara'
   gem 'selenium-webdriver'
+  gem 'rspec-rails'
+  gem 'spring'
+  gem 'factory_girl_rails', require: false
+  gem 'shoulda-matchers'
+  gem 'rails-controller-testing'
 end
 
 group :development do
@@ -52,6 +57,10 @@ group :development do
   gem 'binding_of_caller'
   gem 'pry-rails'
   gem 'faker'
+  # gem 'capybara'
+  gem 'guard-rspec'
+  gem 'spring-commands-rspec'
+  gem 'launchy'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
