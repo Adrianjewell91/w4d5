@@ -54,6 +54,10 @@ header {
   justify-content: center;*/
 }
 
+table{
+  text-align: center;
+}
+
 #in-button {
   background-color: red;
   color: white;

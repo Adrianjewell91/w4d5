@@ -1,2 +1,7 @@
 <h1>Welcome to the greatest m*********ing music website you'll ever visit in
   your entire life, <%= @user.email %>!</h1>
+
+<form action=" <%= bands_url %> " method="get">
+  <%= auth_token %>
+  <input type="submit" value="see the bands">
+</form>

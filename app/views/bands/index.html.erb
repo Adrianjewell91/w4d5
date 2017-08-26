@@ -1,5 +1,11 @@
 <h1>All of the bands!!!!!</h1>
 
+<form action=" <%= new_band_url %> " method="get">
+  <%= auth_token %>
+  <input type="submit" value="create a new band">
+</form>
+
+
 <table>
   <th>Band ID </th>
   <th>Band Name</th>
@@ -12,6 +18,12 @@
     <td>
           <form action=" <%= band_url(band) %> " method="get">
             <input type="submit" value="View">
+            <%= auth_token %>
+          </form>
+    </td>
+    <td>
+          <form action=" <%= edit_band_url(band) %> " method="get">
+            <input type="submit" value="Edit">
             <%= auth_token %>
           </form>
     </td>

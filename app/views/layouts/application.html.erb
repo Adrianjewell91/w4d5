@@ -9,24 +9,31 @@
   </head>
   <body>
     <h1>THE BOMBEST MUSIC WEBSITE EVER</h1>
+
     <header class="group">
       <% if logged_in? %>
         <form action="<%=session_url%>" method="post">
             <input type="hidden" name="_method" value="delete">
-            <input type="hidden"
-                     name="authenticity_token"
-                     value=" <%= form_authenticity_token %> ">
+            <%= auth_token %>
             <p>You are logged in as <%= current_user.email %>.</p>
             <input id="in-button" type="submit" value="log out">
+        </form>
+
+        <form action=" <%= user_url(current_user) %> " method="get">
+            <%= auth_token %>
+            <input type="submit" value="homepage">
         </form>
 
       <% else %>
 
         <form action=" <%= new_session_url %> " method="get">
-          <input type="hidden"
-                   name="authenticity_token"
-                   value=" <%= form_authenticity_token %> ">
+            <%= auth_token %>
             <input id="out-button" type="submit" value="login">
+        </form>
+
+        <form action=" <%= new_user_url %> " method="get">
+            <%= auth_token %>
+            <input id="out-button" type="submit" value="sign the 'f' up">
         </form>
 
       <% end  %>
